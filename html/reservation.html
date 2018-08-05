@@ -1,0 +1,156 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">
+
+            <title>HotelApp - Make Reservation</title>
+            <!-- Bootstrap core CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <style>
+                body {
+                display: grid;
+                font-family: Avenir;
+                -webkit-text-size-adjust: 100%;
+                -webkit-font-smoothing: antialiased;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.315), rgba(0,0,0,0.315));
+                width: 100%;
+                background-color: #666;
+                color: white;
+              }
+              a{
+                color: white;
+              }
+                * {
+                box-sizing: border-box;
+                }
+                .inp {
+                position: relative;
+                margin: auto;
+                width: 100%;
+                max-width: 280px;
+                }
+                .inp .label {
+                position: absolute;
+                top: 16px;
+                left: 0;
+                font-size: 16px;
+                color: #9098a9;
+                font-weight: 500;
+                transform-origin: 0 0;
+                transition: all 0.2s ease;
+                }
+                .inp .border {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background: #07f;
+                transform: scaleX(0);
+                transform-origin: 0 0;
+                transition: all 0.15s ease;
+                }
+                .inp input {
+                -webkit-appearance: none;
+                width: 100%;
+                border: 0;
+                font-family: inherit;
+                padding: 12px 0;
+                height: 48px;
+                font-size: 16px;
+                font-weight: 500;
+                border-bottom: 2px solid #c8ccd4;
+                background: none;
+                border-radius: 0;
+                color: #223254;
+                transition: all 0.15s ease;
+                }
+                .inp input:hover {
+                background: rgba(34,50,84,0.03);
+                }
+                .inp input:not(:placeholder-shown) + span {
+                color: #5a667f;
+                transform: translateY(-26px) scale(0.75);
+                }
+                .inp input:focus {
+                background: none;
+                outline: none;
+                }
+                .inp input:focus + span {
+                color: #07f;
+                transform: translateY(-26px) scale(0.75);
+                }
+                .inp input:focus + span + .border {
+                transform: scaleX(1);
+                }
+                input::placeholder{
+                    padding:10px;
+                }
+            </style>
+            <!-- Custom styles for this template -->
+            <link href="./styles.css" rel="stylesheet">
+    </head>
+    <body class="text-center">
+            <div class="cover-container">
+              <header class="masthead mb-auto">
+                <div class="inner">
+                    <h3 class="masthead-brand">Hotel App</h3>
+                    <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/reservation">Make Hotel Reservation</a>
+                    <a class="nav-link" href="/addhotel">Add Your Hotel</a>
+                  </nav>
+                </div>
+              </header>
+            <h1>Please provide your data</h1>
+            <form method="POST" action="http://localhost:8080/submit">
+                <div id="hotelChoice">
+                    <label class="col-sm-2 col-form-label label">Make Your Choice</label>
+                    <select id="select" class="inp">
+                        <option>Option 1</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 col-form-label label">Name</label>
+                    <input id="name" type="text" name="name" class="inp" placeholder="What is your name" required/>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 col-form-label label">Email</label>
+                    <input id="email" type="email" name="email" class="inp" placeholder="What is your email" required/>
+                </div>
+                <div class="form-group">
+                    <label for="tel" class="col-sm-2 col-form-label label">Mobile Number</label>
+                    <input id="tel" type="tel" name="phone" class="inp" placeholder="What is your phone number" required/>
+                </div>
+                <div class="form-group">
+                    <label for="address" class="col-sm-2 col-form-label label">Address</label>
+                    <input id="address" type="text" name="address" class="inp" placeholder="What is your address" required/>
+                    </div>
+                <div class="form-group">
+                    <label for="city" class="col-sm-2 col-form-label label">City</label>
+                    <input id="city" type="tel" name="city" class="inp" placeholder="Enter your City" required/>
+                </div>
+                <div class="form-group">
+                        <label for="state" class="col-sm-2 col-form-label label">State</label>
+                        <input id="state" type="text" name="state" class="inp" placeholder="Enter your state" required/>
+                    </div>
+                <div class="form-group">
+                    <label for="country" class="col-sm-2 col-form-label label">Country</label>
+                    <input id="country" type="text" name="country" class="inp" placeholder="Enter your country" required/>
+                </div>
+                <div class="form-group">
+                    <label for="checkIn" class="col-sm-2 col-form-label label">Check in Date</label>
+                    <input type="date" name="checkIn" class="inp" placeholder="Enter Check In Date">
+                </div>
+                <div class="form-group">
+                    <label for="checkOut" class="col-sm-2 col-form-label label">Check Out Date</label>
+                    <input type="date" name="checkOut" class="inp" placeholder="Enter Check Out Date">
+                </div>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <script src="hotelchoice.js" type="javascript"></script>
+    </body>
+</html>
